@@ -3,10 +3,10 @@ import gym
 from gym.wrappers.monitor import Monitor
 
 import numpy as np
-from nes import run_nes
+from nes import run_nes, run_nes_improved
 
 
-env = gym.make('BallBalancerSim-v0')  # Pendulum-v0
+env = gym.make('Pendulum-v0')  # BallBalancerSim-v0 
 # print(env.action_space.low, env.action_space.high)
 # print(env.observation_space.low, env.observation_space.high)
 # print(env.action_space.sample())
