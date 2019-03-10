@@ -4,14 +4,28 @@ from gym.wrappers.monitor import Monitor
 
 import numpy as np
 from nes import run_nes, run_nes_improved
+from torch.nn.utils import parameters_to_vector
+
+from nes_new import run_nes_new
 
 
-env_name = 'Pendulum-v0'  # BallBalancerSim-v0 
+env_name = 'BallBalancerSim-v0'  # Pendulum-v0
+# env = gym.make(env_name)
 # print(env.action_space.low, env.action_space.high)
 # print(env.observation_space.low, env.observation_space.high)
-# print(env.action_space.sample())
+# print(env.observation_space.sample().size)
 
-run_nes_improved(env_name)
+# from nes_model import ModelNes
+# model = ModelNes(3, 5)
+# for p in model.parameters():
+# 	p.requires_grad = False
+
+# print(sum(p.numel() for p in model.parameters()))
+
+# print(parameters_to_vector(model.parameters()).numpy().size)
+
+run_nes(gym.make(env_name))
+# run_nes_improved(env_name)
 
 """
 for i_episode in range(3):
